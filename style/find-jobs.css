@@ -1,0 +1,236 @@
+:root {
+  --primary-color: #2E7D32;
+  --hover-color: #66BB6A ;
+  --bg-color: #E8F5E9;
+  --text-color: #212121;
+  --subtext-color: #5f6368;
+  --border-color: #2de033;
+  --header-color: #C8E6C9;
+  --secondary-color: #C8E6C9;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 100px;
+  padding: 5px;
+}
+.header-left {
+  padding: 0 25px 0 5px;
+}
+.orolinkjobs-logo{
+  width: 120px;
+}
+.header-right{
+  padding: 0 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  flex: 1;
+}
+#searchInput{
+  background-color: rgb(250, 250, 250);
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  padding: 0 16px 0 10px;
+  outline: none;
+  flex: 1;
+  width: 500px;
+}
+#filterCategory{
+  background-color: rgb(255, 254, 254);
+  border: 1px solid transparent;
+  outline: none;
+  height: 40px;
+  border-radius: 10px;
+  color: rgb(116, 112, 112);
+  width: 127px;
+  padding: 0 10px;
+  margin-left: -20px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+#filterCategory:hover {
+  border: 1px solid green;
+}
+#filterCategory:active {
+  border: 1px solid green;
+}
+#filterCategory option {
+  font-size: 14px;
+  color: rgb(116, 112, 112);
+  background-color: var(--bg-color);
+  cursor: pointer;
+}
+.filters {
+  background: var(--secondary-color);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin: 20px;
+}
+.filters input, 
+.filters select {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 16px;
+}
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
+.job-card {
+  background: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.job-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.job-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: var(--subtext-color);
+}
+.apply-button {
+  margin-top: 15px;
+  padding: 10px 16px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.apply-button:hover {
+  background-color: var(--hover-color);
+}
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: var(--secondary-color);
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+}
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--subtext-color);
+}
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+.modal form input, 
+.modal form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 16px;
+}
+.modal form button {
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.modal form button:hover {
+  background-color: #1669c1;
+}
+
+@media (max-width: 768px) {
+  .header-rigth{
+    display: none;
+  }  
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .header-left {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .orolinkjobs-logo {
+    width: 100px; /* Adjust logo size for mobile */
+  }
+
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  #searchInput {
+    width: 90%; /* Make search input responsive */
+    max-width: 400px;
+  }
+
+  #filterCategory {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  #filterCategory{
+    margin: 0;
+    margin-top: 5px;
+  }
+}

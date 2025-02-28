@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Job Finder</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/find-jobs.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="icon" href=
+"images/orolinkjob logo.png"
+        type="image/x-icon" />
+  <style></style>
+</head>
+<body>
+  <header>
+    <a href="">
+      <div class="header-left">
+        <img class="orolinkjobs-logo" src="images/orolinkjob logo.png" alt="Logo">
+      </div>
+    </a>
+    <div class="header-right">
+      <div>
+        <input type="text" id="searchInput" placeholder="Job title or company">
+        <select id="filterCategory">
+          <div class="options">
+            <option value="">All Categories</option>
+            <option value="IT">IT/Software</option>
+            <option value="Design">Design</option>
+            <option value="Marketing">Marketing</option>
+          </div>
+        </select>
+      </div>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="filters">
+      <select id="filterLocation" class="filterLocation">
+      </select>
+      <select id="filterJobType">
+        <option value="">All Job Types</option>
+        <option value="Full Time">Full Time</option>
+        <option value="Part Time">Part Time</option>
+        <option value="Contract">Contract</option>
+      </select>
+    </div>
+    
+    <div class="job-list" id="jobList">
+      <!-- Job cards will be rendered here -->
+    </div>
+  </div>
+  
+  <!-- Modal for Application Form -->
+  <div id="applicationModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close-modal">&times;</span>
+      <h2>Apply for Job</h2>
+    </div>
+  </div>
+  
+  <script src="script/just.js" type="module"></script>
+</body>
+</html>
